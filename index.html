@@ -3,26 +3,39 @@
 	<head> 
 		<title>че зiрiw глоза пузiриш </title>
 
+		<meta charset="utf-8">
+
 		<style>
-		   body {
-		    background-image: url(http://static.donationalerts.ru/uploads/images/99507/gradient.png); /* Путь к фоновому изображению */
-		    background-color: #8a00ff; /* Цвет фона */
-		   }
+			html, body {
+				height: 100%;
+				width: 100%;
+			}
+
+			body {
+				background-color: #8a00ff;
+				background-image: url("http://static.donationalerts.ru/uploads/images/99507/gradient.png");
+				display: table;
+				overflow: hidden;
+			}
+
+			.message{
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				color: white;
+			}
 		</style>
+
+		<script>
+			var music = new Audio( "https://api.soundcloud.com/tracks/223063710/stream?client_id=831fdf2953440ea6e18c24717406f6b2" );
+			music.play();
+		</script>
 	</head>
 
 	<body>
-
-	<font color="white">
-		<center><h1>helo mazafaka.</h1></center>
-	</font>
-
-	<audio
-	  src="https://api.soundcloud.com/tracks/223063710/stream?client_id=831fdf2953440ea6e18c24717406f6b2"
-	  autoplay>
-	  пасасешь <code>audio</code> ок. 
-	</audio>
-
+		<div class="message">
+			<h1>helo mazafaka</h1>
+		</div>
 	</body>
 
 </html>
