@@ -36,18 +36,16 @@
 		</style>
 
 		<script>
-			class Music {
-				constructor( url, name ){
-					this.url = url;
-					this.name = name;
-				}
+			function Music( url, name ){
+				this.url = url;
+				this.name = name;
+			}
 
-				LoadAndPlay(){
-					var audio = new Audio( this.url );
-					this.audio = audio;
+			Music.prototype.LoadAndPlay = function(){
+				var audio = new Audio( this.url );
+				this.audio = audio;
 
-					audio.play();
-				}
+				audio.play();
 			}
 			
 			function randint( from, to ){
