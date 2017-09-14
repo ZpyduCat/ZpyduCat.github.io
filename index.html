@@ -25,16 +25,62 @@
 				text-align: center;
 				color: white;
 			}
+
+			#song-name {
+				position: absolute;
+				left: 20;
+				bottom: 0;
+				text-align: left;
+				color: white;
+			}
 		</style>
+
+		<script>
+			class Music {
+				constructor( url, name ){
+					this.url = url;
+					this.name = name;
+				}
+
+				LoadAndPlay(){
+					var audio = new Audio( this.url );
+					this.audio = audio;
+
+					audio.play();
+				}
+			}
+			
+			function randint( from, to ){
+				return Math.floor( from + Math.random() * (to-from) );
+			}
+
+			var musicList = [
+				new Music( "muzara/gmod_theme.ogg", "S&box OST (ORIGINAL Nah......)" ),
+				new Music( "muzara/zomboi.ogg", "зомboi BASBUSTED by dj SPAiK" ),
+				new Music( "muzara/parti.ogg", "parti " ),
+				new Music( "muzara/rock_dopstep_klubnac.ogg", "Dubstep | дабстеп | trap | треп | басы | клубняк | дискач | rock | рок | микс | ремикс" ),
+				new Music( "muzara/pole.ogg", "надобы поле притоптать блин... пора уже. " ),
+			];
+
+			var music = musicList[ randint( 0, musicList.length ) ];
+			music.LoadAndPlay();
+
+			window.onload = function(){
+				var name = document.getElementById( "song-name" );
+				name.innerText = 'pley: ' + music.name;
+			}
+		</script>
+
 	</head>
 
 	<body>
+		<h2 id="song-name"></h2>
+
 		<div class="message">
 			<h1>helo mazafaka</h1>
 			тi заходешь на самi крутой сервак м ире..... завидуй
 		</div>
 
-		<audio src="muzara/gmod_theme.ogg" autoplay loop></audio>
 
 	</body>
 
